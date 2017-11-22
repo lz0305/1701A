@@ -1,0 +1,224 @@
+1、MVC：Model（模型）－View（视图）－Controller（控制器）三部分组成。
+核心功能：以指令的形式扩展HTML的功能。
+
+2、MVC模式的理解：在Web程序中可以将视图理解为浏览器，服务器端组件为控制器，模型即为业务逻辑模块，视图和控制器都依赖于模型。
+
+3、MVC的处理过程：首先控制器接收用户的请求，并决定应该调用哪个模型来进行处理，然后模型用业务逻辑来处理用户的请求并返回数据，最后控制器用相应的视图格式化模型返回的数据，并通过表示层呈现给用户。
+
+4、Angular 特性：指令系统 . 模块系统 . MVC模式 . 依赖注入 . 数据双向绑定 五部分组成。
+
+5、Angular应用场景：增加Create、查询Retrieve、更新Update、删除Delete
+不适合应用的场景：特效，动画，游戏等。
+
+6、指令ng-app告诉angularjs它的控制范围。使用双大括号{{ }}语法插入动态数据
+
+7、什么是$scope：$scope的使用贯穿整个AnuglarJS应用，它与数据模型相关联，同时在视图和控制器之间建立一个通道，作用域发生改变时$scope会立即更新，$scope在发生改变时也会重新渲染视图。
+
+8、$scope和$rootscope的区别：前者是局部变量，后者是全局变量。
+
+9、$scope的作用：$scope对象在AngularJS中充当数据模型的作用。
+
+10、$scope的四个生命周期：创建，链接，更新，销毁，四个 部分。
+
+11、Angular的表达式：1.使用表达式把数据绑定到HTML 2.表达式写在双大括号内
+3.AngularJS可以包含字母、运算符和变量；
+
+12、Angular模块：angular.module（）括号里有两个参数，第一个参数是<html ng-app="app"> 这个app的名字，第二个参数为空的数组。
+
+13、controller模块：controller（）也有两个参数，第一个参数是控制器的函数名，就是你所创建的div的名字，第二个参数为控制器的函数。
+
+14、Angular数据绑定：AngularJS的数据绑定是数据模型(model)与视图(view)组件的自动同步。
+
+15、Angular指令：ng-click/dblclick 点击/双击  ng-mouseover/out 移入/移出ng-keydown/up  键盘按下/抬起   ng-focus/blur 获取焦点/失去焦点  ng-submit  提交  ng-bind 绑定数据
+
+16、数据绑定的三种格式：双大括号 ng-bind：绑定的是非表单元素。 ng-model：绑定的是表单元素。 三种格式，其中使用双大括号的比较多。
+
+17、如何解决闪屏问题：<style>
+                       .ng-cloak{
+                               display:none;
+                                              }
+                     </style>
+                        <body ng-cloak class="ng-cloak">
+这样写就解决闪屏问题了。
+
+18、Angular指令：
+  ng-controller: 定义angular控制器 
+  ng-model 指令把元素值（输入域的值）绑定到应用程序 
+  ng-bind     绑定 HTML 元素到应用程序数据
+  ng-init 指令初始化一个AngularJS应用程序的数据
+  ng-value,用于表单中数据绑定的表达式（计算等）
+  ng-readonly 指令用于设置表单域(input 或 textarea) 的readonly 属性如果       ng-readonly （属性的表达式返回 true 则表单域为只读。）
+  ng-show 指令在表达式为 true 时显示指定的 HTML 元素，否则隐藏指定的 HTML     元素。
+  ng-true-value;ng-false-value  复选框使用添加，表示复选框被选中时其ng-       model的值为1（0）
+  ng-options属性可以在表达式中使用数组或对象来自动生成一个select中的          option列表
+  ng-repeat 指令用于循环输出指定次数的 HTML 元素$index $first $last           $middle
+
+19、ng-if ng-show ng-hide的区别：ng-if和ng-show都是true的时候显示 false的时候隐藏，而ng-hide则是在true的时候消失，false的时候隐藏。ng-if的原理是插入一个节点，删除一个节点，而ng-show和ng-hide的原理都是display：none的原理
+
+20、全局指令：
+ng-app 		        定义应用程序的根元素。
+ng-controller 		定义应用的控制器对象
+ng-init                 定义应用的初始化值
+ng-include 		在应用中包含 HTML 文件
+ng-csp 	使用 ng-csp 指令, 你可以修改 AngularJS 执行代码的方式。AngularJS 的执行方式提高了 30% 的性能	
+ng-model-options 	规定如何更新模型			                                  {updateOn: 'event'}			
+                        {debounce : 1000} 规定等待多少毫秒后绑定数据
+
+21、内容绑定指令：ng-bind ng-model ｛｛｝｝三种。
+
+22、属性绑定指令：
+ ng-href                   为 <a> 元素指定链接
+ ng-src 		   指定 <img> 元素的 src 属性
+ ng-open 		   指定元素的 open 属性(details-summary)
+
+23、元素指令：
+
+ng-class 			指定 HTML 元素使用的 CSS 类
+ng-class-even 		        类似ng-class，但只在偶数行起作用
+ng-class-odd 		        类似ng-class，但只在奇数行起作用
+ng-style 			指定元素的 style 属性
+ng-hide 			隐藏或显示 HTML 元素
+ng-show 			显示或隐藏 HTML 元素
+ng-if 				如果条件为 false 移除 HTML 元素
+ng-transclude 		        规定填充的目标位置
+
+24、鼠标点击事件：
+
+ng-click 		定义元素被点击时的行为
+ng-dblclick 		规定双击事件的行为
+
+25、键盘事件：
+ng-keydown 	        规定按下按键事件的行为
+ng-keypress 		规定按下按键事件的行为
+ng-keyup 		规定松开按键事件的行为
+
+26、鼠标事件：
+ng-mousedown 		规定按下鼠标按键时的行为
+ng-mouseenter 		规定鼠标指针穿过元素时的行为
+ng-mouseleave 		规定鼠标指针离开元素时的行为
+ng-mousemove 		规定鼠标指针在指定的元素中移动时的行为ng-mouseover 		规定鼠标指针位于元素上方时的行为
+ng-mouseup 		规定当在元素上松开鼠标按钮时的行为
+
+27、表单指令：
+
+ng-list 			将文本转换为列表 (数组)
+ng-options 			在 <select> 列表中指定 <options>	ng-form 			指定 HTML 表单继承控制器表单
+ng-value 			规定 input 元素的值
+ng-selected 		        指定元素的 selected 属性	
+ng-disabled 		        规定一个元素是否被禁用
+ng-readonly 		        指定元素的 readonly 属性
+
+28、表单事件：
+ng-focus 			规定得到焦点事件的行为
+ng-blur 			规定失去焦点事件的行为
+ng-change 			规定在内容改变时要执行的表达式
+ng-checked 			规定元素是否被选中事件
+ng-submit 			规定表单提交事件发生时执行的表达式
+
+29、keydown，keypress，keyup三者区别：
+1.KeyDown 和 KeyPress 事件在按下键时发生，KeyUp 事件在释放键时发生。
+
+30、get和post的区别：1.大小：get小；安全： post安全；性能：get好。
+
+面试可能会问的题目！！！
+
+
+
+
+数组，字符串常用的方法：
+	数组：push unshift sort pop reverse join splice
+	string:substr substring toUpperCase toLowerCase split 
+
+JQ动画有哪些：
+	animation fadeIn fadeOut slideDown slideUp show hide 
+
+JQ原声JS的dom操作有哪些：
+	append remove/empty clone insertBefore insertAfter
+
+面向对象的prototype：
+	原型，继承，定义方法
+
+json字符串如何转换成json：
+	eval
+	JSON.parse
+
+
+正则常用的方法：
+	test
+	replace
+	....
+
+get和post的区别：1.大小：get小；安全： post安全；性能：get好。
+
+异步加载的优点：
+
+ajax的作用：数据交互
+
+jsonp的原理：创建一个标签script，给他一个src，插入到页面，在回调函数里面处理数据
+
+css常用的兼容性：
+	opacity:0.5 IE8以上，filter：alpha（opacity=50）
+	transition
+	transform
+	rgba() IE8以上
+	双倍margin 
+	弹性盒子
+	标准模式和怪异模式
+	行元素 padding margin
+	img默认间隙
+	。。。。。
+
+三元表达式：a>b?10:20
+
+even相关知识点：
+	e.clientX
+	e.preventDefault
+	e.stopPropagation
+	e.keyCode
+	e.ctrl/shift
+	.....
+
+如何创建对象：工厂方式，构造函数（方法不共享），原型模式（属性不私有），组合方式（构造函数定义属性，原型构造方法）
+
+
+继承：原型继承 
+
+JQ绑定：on/off  bind/unbind delagate/undelagate .....
+
+ajax有几种请求方式：get/post
+
+闭包：一个函数套一个函数。
+
+angular
+	1.特性、
+	2.$scope $rootScope
+	3.内置指令/过滤器/服务有哪些？
+	4.自定义指令属性哪些？restrict/replace/transclude/replace/link/controller/scope/template/templateUrl/require
+	5.自定义过滤器
+	6.自定义服务方法有哪些？
+		value/constant/factory/service/provider
+	7.路由
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
