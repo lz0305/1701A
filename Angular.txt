@@ -1,3 +1,4 @@
+				噜啦啦啦
 1、MVC：Model（模型）－View（视图）－Controller（控制器）三部分组成。
 核心功能：以指令的形式扩展HTML的功能。
 
